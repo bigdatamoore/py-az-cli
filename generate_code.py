@@ -195,6 +195,13 @@ def {command_verb}({arguments_formatted}):
     params = get_params(locals())   
     command = "{command.name} " + params
     print(command)
+    output = subprocess.run(command, shell = True, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+    stdout =  output.stdout.decode("utf-8")
+    stderr = output.stderr.decode("utf-8")
+    if stdout:
+        print(stdout)
+    else:
+        print(stderr)    
 """)
 
             print("\t" + command_verb + ":" + commands[command_path][command_verb].name)
