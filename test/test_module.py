@@ -1,12 +1,11 @@
-
-import inspect
 import pyaz.acr as acr
+import subprocess
 
-print(acr.check_name(name="test"))
+acr.list(resource_group="myrg")
 
+# command = "az --version"
+# output = subprocess.run(command, shell = True, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+# stdout =  output.stdout.decode("utf-8")
+# stderr = output.stderr.decode("utf-8")
 
-#acr.show_endpoints(name="test", resource_group="rg")
-
-
-
-
+# print(stdout)
